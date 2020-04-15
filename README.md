@@ -38,9 +38,9 @@ $ ./qpc.py "find_packages('hearth')"
 
 $ ./qpc.py
 
-qpclib> push
+qpclib> categorize_names("Card games", "hearth")
 
-Done push
+qpclib> push
 
 
 
