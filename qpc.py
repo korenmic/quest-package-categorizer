@@ -258,7 +258,8 @@ def main():
                 # because it is already done in QPCCmd.__init__ anyways
                 globals().get(command)()
         elif any(command.startswith(fl) for fl in FROZEN_LOCALS):
-            exec(command, globals(), locals())
+            exec("result = {}".format(command), globals(), locals())
+            print(result)
         if not command.startswith('update'):
             update()
         print("Done {}".format(_argv[-1]))
@@ -266,3 +267,5 @@ def main():
 if __name__ == '__main__':
     #current_folder = _os.path.split(_os.path.abspath(__file__))[0]
     main()
+else:
+    APPS = _jfy(_APPNAMES_PATH)
