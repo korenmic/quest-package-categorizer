@@ -265,7 +265,6 @@ def main():
         print("Done {}".format(_argv[-1]))
 
 if __name__ == '__main__':
-    #current_folder = _os.path.split(_os.path.abspath(__file__))[0]
     main()
 else:
     APPS = _jfy(_APPNAMES_PATH)
