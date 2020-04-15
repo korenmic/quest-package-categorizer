@@ -2,13 +2,11 @@
 Quest app launcher Packages json Categories Manager library
 
 
-Discussion:
-
-https://www.facebook.com/groups/vrmai/permalink/1433336956848923/
+Discussion: https://www.facebook.com/groups/vrmai/permalink/1433336956848923/
 
 
-Share the project:
-http://tinyurl.com/qpc-mk-py
+Share the project: http://tinyurl.com/qpc-mk-py
+
 
 
 For this to work, it is mandatory that your quest has this installed first:
