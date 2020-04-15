@@ -2,6 +2,14 @@
 Quest app launcher Packages json Categories Manager library
 
 
+
+For this to work, it is mandatory that your quest has this installed first:
+
+https://sidequestvr.com/#/app/199 / https://github.com/tverona1/QuestAppLauncher
+
+run it at least once before using this script.
+
+
 To Install:
 
 wget https://github.com/korenmic/quest-package-categorizer/raw/master/qpc.py
