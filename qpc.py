@@ -149,7 +149,7 @@ def set_default_category(new_default_category):
     if previous == new_default_category:
         print("Set default category to: '{}'".format(previous))
     else:
-        print("Changed default category from: '{}' to: '{}'".format(new_default_category, previous))
+        print("Changed default category from: '{}' to: '{}'".format(previous, new_default_category))
 
 
 def find_packages(*names):
