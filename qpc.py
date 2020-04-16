@@ -128,12 +128,17 @@ def get_unhandled_packages():
     return new_unhandled_packages
 
 
-def commit_unhandled():
+def commit_unhandled(category=None, names=None):
+    if category is None:
+        category = _DEFAULT_CATEGORY
     """ Update local json object with new unhandled packages """
+    unhandled_package = get_unhandled_packages()
+    if names:
+        unhandled_package = tuple(set(names) & set(unhandled_package))
     for unhandled_package in get_unhandled_packages():
         # TODO - new names could be taken from actual downloadRepoUri from
         # config.json and be used as package only if missing from the repo
-        APPS[unhandled_package] = dict(name=unhandled_package, category=_DEFAULT_CATEGORY)
+        APPS[unhandled_package] = dict(name=unhandled_package, category=category)
 
 
 def set_default_category(new_default_category):
@@ -163,7 +168,10 @@ def categorize_names(category, *names):
     Set category for all packages that partially match names
     categorize_names("Utils", "partial util name goes here")
     """
-    for package in find_packages(*names):
+    packages = find_packages(*names)
+    if not packages:
+        return commit_unhandled(category=category, names=names)
+    for package in packages:
         current_category = APPS[package].get('category')
         APPS[package]['category'] = category
         if not current_category:
