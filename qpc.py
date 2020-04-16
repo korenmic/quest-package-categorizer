@@ -136,6 +136,17 @@ def commit_unhandled():
         APPS[unhandled_package] = dict(name=unhandled_package, category=_DEFAULT_CATEGORY)
 
 
+def set_default_category(new_default_category):
+    """ Used to set the default category used by `commit_unhandled` """
+    global _DEFAULT_CATEGORY
+    previous = _DEFAULT_CATEGORY
+    _DEFAULT_CATEGORY = new_default_category
+    if previous == new_default_category:
+        print("Set default category to: '{}'".format(previous))
+    else:
+        print("Changed default category from: '{}' to: '{}'".format(new_default_category, previous))
+
+
 def find_packages(*names):
     """ Show what is used when sending names to categorize_names """
     packages = []
@@ -265,7 +276,6 @@ def main():
         print("Done {}".format(_argv[-1]))
 
 if __name__ == '__main__':
-    #current_folder = _os.path.split(_os.path.abspath(__file__))[0]
     main()
 else:
     APPS = _jfy(_APPNAMES_PATH)
