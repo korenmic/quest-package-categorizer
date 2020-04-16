@@ -234,7 +234,7 @@ class QPCCmd(Pdb, object):
                 '\n'.join(" '{}'".format(cat) for cat in list_categories()) + '\n' + \
                 QPCCmd._get_help() + '\n' \
                 "help for more commands (same as pdb's help)\n" + \
-                (('New packages: ' + new_packages) if new_packages else '')
+                (('New packages: \n' + '\n'.join(new_packages)) if new_packages else '')
         return intro.strip()
 
     def __init__(self, *args, **kwargs):
@@ -265,6 +265,7 @@ def main():
         print("Done {}".format(_argv[-1]))
 
 if __name__ == '__main__':
+    #current_folder = _os.path.split(_os.path.abspath(__file__))[0]
     main()
 else:
     APPS = _jfy(_APPNAMES_PATH)
