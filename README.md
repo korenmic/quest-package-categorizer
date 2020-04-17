@@ -2,7 +2,7 @@
 Quest app launcher Packages json Categories Manager library
 
 
-Discussion: https://www.facebook.com/groups/vrmai/permalink/1433336956848923/
+Discussion: https://www.facebook.com/groups/vrmai/permalink/1437693489746603/
 
 
 Share the project: http://tinyurl.com/qpc-mk-py
