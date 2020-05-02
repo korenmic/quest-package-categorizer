@@ -44,8 +44,9 @@ def _jfy(path):
 
 
 _DEFAULT_CATEGORY = 'unsorted'
-_APPNAMES_PATH = 'appnames_all.json'
-_REMOTE_APPNAMES_FOLDER_PATH = '/sdcard/Android/data/aaa.QuestAppLauncher.App/files/download_cache'
+_APPNAMES_PATH = 'appnames.json'
+_REMOTE_APPNAMES_FOLDER_PATH = '/sdcard/Android/data/aaa.QuestAppLauncher.App/files'
+_ORIGINAL_REFERENCES_FOLDER_NAME = 'download_cache'
 
 _ADB_PATH = None
 
@@ -209,7 +210,7 @@ def pull(quiet=False):
         print("Never installed before, installing")
         APPS = dict()
         for json in 'appnames_quest.json', 'appnames_other.json':
-            full_path = _os.path.join(_REMOTE_APPNAMES_FOLDER_PATH, json)
+            full_path = _os.path.join(_REMOTE_APPNAMES_FOLDER_PATH, _ORIGINAL_REFERENCES_FOLDER_NAME, json)
             _adb_on_device('pull {}'.format(full_path))
             new_apps = _jfy(json)
             #_os.
