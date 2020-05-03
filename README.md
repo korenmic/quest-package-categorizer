@@ -1,5 +1,5 @@
 # quest-package-categorizer
-Quest app launcher Packages json Categories Manager library
+Quest app launcher Packages json Categories Manager shell
 
 
 Discussion: https://www.facebook.com/groups/vrmai/permalink/1437693489746603/
